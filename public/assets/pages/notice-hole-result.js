@@ -21,7 +21,7 @@ window.app = new Vue({
             }
         },
         getSocketData() {
-            let socket = io('http://localhost:3001');
+            let socket = io('https://gamification-pm.herokuapp.com');
             socket.on('hole', (msg) => {
                 let dataArr = [];
                 msg.forEach((element) => {

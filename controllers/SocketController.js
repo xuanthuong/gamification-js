@@ -16,7 +16,7 @@ io.on('connection', (socket) => {
 http.listen(3001);
 
 const socketApi = (req, res, next) => {
-    let socket = ioclient.connect('http://localhost:3001', { reconnect: true });
+    let socket = ioclient.connect('https://gamification-pm.herokuapp.com', { reconnect: true });
     socket.on('connect', function (socket) {
         console.log('Connected!');
     });
