@@ -1,0 +1,48 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .row 
+        .col-md-12
+            .card
+                .card-content
+                    .form-horizontal
+                        button.btn.btn-info(@click="onShowResultClick") Show Result
+    .row
+      .col-md-12
+        .card
+          .card-content
+            .table-responsive
+              table.table
+                thead
+                  tr
+                    th CFD Id
+                    th CFD Name
+                    th.text-center Process Name
+                    th.text-center Sequence
+                    th.text-center Lower Bound
+                    th.text-center Upper Bound
+                    th.text-right Frequency
+                    th.text-right Cumulative Frequency
+                    th.text-center Percentage
+                    th Level
+                    th Start Date
+                    th End Date
+                tbody
+                    
+                  tr(v-for="cumulative in cumulatives")
+                      td {{cumulative.id}}
+                      td {{cumulative.cfdName}}
+                      td.text-center {{cumulative.processName}}
+                      td.text-center {{cumulative.seq}}
+                      td.text-center {{cumulative.lowerBound}}
+                      td.text-center {{cumulative.upperBound}}
+                      td.text-right {{cumulative.frequency}}
+                      td.text-right {{cumulative.cumuFrequency}}
+                      td.text-center {{cumulative.percentage}}
+                      td {{cumulative.level}}
+                      td {{cumulative.stDt}}
+                      td {{cumulative.endDt}}
+block scripts

@@ -1,0 +1,156 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .row
+      .col-md-6
+        .card
+          .card-content
+            .table-responsive
+              table.table
+                thead
+                  tr
+                    th.text-center No.
+                    th Task Name
+                    th.text-center Score
+                    th Date
+                    th.text-center Point
+                tbody
+                  tr
+                    td.text-center 1
+                    td OD10026
+                    td.text-center -3
+                    td 2017.06.20
+                    td.text-center 300
+                  tr
+                    td.text-center 2
+                    td OD10027
+                    td.text-center 33
+                    td 2017.06.20
+                    td.text-center 3300
+                  tr
+                    td.text-center 3
+                    td OD10028
+                    td.text-center -3
+                    td 2017.06.20
+                    td.text-center 2300
+                  tr
+                    td.text-center 4
+                    td OD10029
+                    td.text-center 13
+                    td 2017.06.20
+                    td.text-center 1300
+                    tr
+                    td.text-center 5
+                    td OD10026
+                    td.text-center -3
+                    td 2017.06.20
+                    td.text-center 300
+                  tr
+                    td.text-center 6
+                    td OD10027
+                    td.text-center 33
+                    td 2017.06.20
+                    td.text-center 3300
+                  tr
+                    td.text-center 7
+                    td OD10028
+                    td.text-center -3
+                    td 2017.06.20
+                    td.text-center 2300
+                  tr
+                    td.text-center 8
+                    td OD10029
+                    td.text-center 13
+                    td 2017.06.20
+                    td.text-center 1300
+      .col-md-6
+          .card
+            .card-content
+              .table-responsive
+                table.table
+                  thead
+                    tr
+                      th.text-center No
+                      th Task Name
+                      th.text-center Par
+                      th.text-center Score
+                      th.text-center Point
+                      th Date Time
+                  tbody
+                    tr
+                      td.text-center 1
+                      td EDT Check
+                      td.text-center 3
+                      td.text-center 3
+                      td.text-center 0
+                      td 2017.12.11
+                    tr
+                      td.text-center 2
+                      td Container Entry
+                      td.text-center 3
+                      td.text-center 3
+                      td.text-center 0
+                      td 2017.12.11
+                    tr
+                      td.text-center 3
+                      td Mark & Description Entry
+                      td.text-center 3
+                      td.text-center 3
+                      td.text-center 0
+                      td 2017.12.11
+                    tr
+                      td.text-center 4
+                      td Freight Entry
+                      td.text-center 3
+                      td.text-center 3
+                      td.text-center 0
+                      td 2017.12.11
+            .row
+              .col-md-3
+                .radio.radio-inline
+                  label HOLD IN ONE
+                    input(type="radio", v-model="image", name="option1", value = 1, @change="onChangeRadio")
+              .col-md-2
+                .radio.radio-inline
+                  label ALBATROSS
+                    input(type="radio", v-model="image", name="option1", value = 4, @change="onChangeRadio")
+              .col-md-2
+                .radio.radio-inline
+                  label EAGLE
+                    input(type="radio", v-model="image", name="option1", value = 5, @change="onChangeRadio")
+              .col-md-2
+                .radio.radio-inline
+                  label BIRDY
+                    input(type="radio", v-model="image", name="option1", value = 6, @change="onChangeRadio")
+              .col-md-2
+                .radio.radio-inline
+                  label PAR
+                    input(type="radio", v-model="image", name="option1", value = 2, @change="onChangeRadio")
+            .row
+              .col-md-3
+                .radio.radio-inline
+                  label BOGEY
+                    input(type="radio", v-model="image", name="option1", value = 8, @change="onChangeRadio")
+              .col-md-2
+                .radio.radio-inline
+                  label Double Bogey
+                    input(type="radio", v-model="image", name="option1", value = 9, @change="onChangeRadio")
+              .col-md-2
+                .radio.radio-inline
+                  label Triple Bogey
+                    input(type="radio", v-model="image", name="option1", value = 3, @change="onChangeRadio")
+              .col-md-2
+                .radio.radio-inline
+                  label Quadruple Bogey
+                    input(type="radio", v-model="image", name="option1", value = 10, @change="onChangeRadio")
+              .col-md-2
+                .radio.radio-inline
+                  label Double Par
+                    input(type="radio", v-model="image", name="option1", value = 11, @change="onChangeRadio")
+          .row.card.card-pricing.card-raised
+              .content
+                .icon.icon-rose(id="img")
+block scripts

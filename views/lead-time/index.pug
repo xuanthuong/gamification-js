@@ -1,0 +1,36 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .row 
+        .col-md-12
+            .card
+                .card-content
+                    .form-horizontal
+                        button.btn.btn-info(@click="onSelectProcessClick") Show Process
+    .row
+      .col-md-12
+        .card
+          .card-content
+            .table-responsive
+              table.table#table
+                thead
+                  tr
+                    th.text-center User Id
+                    th Process Name
+                    th.text-center Start DateTime
+                    th.text-center End DateTime
+                    th.text-center Lead Time
+                    th Timestamp
+                tbody
+                    
+                    tr(v-for="process in processes", :key="process.id")
+                        td.text-center {{process.id}}
+                        td {{process.processName}}
+                        td.text-center {{process.stDt}}
+                        td.text-center {{process.endDt}}
+                        td.text-center {{process.leadTime}}
+                        td {{process.timeStamp}}
+block scripts

@@ -1,0 +1,58 @@
+extends ../layout
+
+block styles
+
+block content
+    .container-fluid
+        .col-md-12
+            .card
+                .card-content
+                    #colouredBarsChart.ct-chart
+                    .card-footer
+                        i.fa.fa-circle.text-info
+                        |  Me
+                        |
+                        i.fa.fa-circle.text-danger
+                        |  Member Avg.
+        .col-md-12
+            .card
+                .card-content
+                    .col-md-8
+                        #multipleBarsChart.ct-chart     
+                        .card-footer
+                        i.fa.fa-circle.text-info
+                        |  Me
+                        |
+                        i.fa.fa-circle.text-danger
+                        |  Member Avg.         
+                    .col-md-4
+                        .row
+                            .col-md-3(style="margin-top:5px;")
+                                    img(src="/assets/img/cup1.png")
+                            .col-md-4
+                                .row
+                                    h5.card-title.text-center Monthly Champion
+                                .row 
+                                    h5.card-title.text-center 
+                                        b 5
+                        .row  
+                            .col-md-3(style="margin-top:5px;")
+                                    img(src="/assets/img/cup1.png")
+
+                            .col-md-4
+                                .row
+                                    h5.card-title.text-center Weekly Champion
+                                .row 
+                                    h5.card-title.text-center 
+                                        b 18
+                        .row  
+                            .col-md-3(style="margin-top:5px;")
+                                    img(src="/assets/img/cup1.png")
+
+                            .col-md-4
+                                .row
+                                    h5.card-title.text-center Day Champion
+                                .row 
+                                    h5.card-title.text-center 
+                                        b 38               
+block scripts

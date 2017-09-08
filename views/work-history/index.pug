@@ -1,0 +1,112 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .col-md-2
+    .col-md-8
+        .col-md-12
+          .card
+            .card-content
+              h4.card-title 
+                b OKROEH1009
+              .progress.progress-line-primary(style="height: 50px;")
+                .progress-bar(role='progressbar', aria-valuenow='80', aria-valuemin='0', aria-valuemax='100', style='width: 39%;')
+                  span.sr-only 39% Complete
+              label.label-on-right Self: 5
+        .col-md-12
+          .card
+            .card-content
+                .table-responsive
+                  table.table.table-striped
+                    thead
+                      tr
+                        th.text-center No.
+                        th Working History
+                        th.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes')
+                    tbody
+                      tr
+                        td.text-center 1
+                        td Gross Weight Update
+                        td.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes')
+                      tr
+                        td.text-center 2
+                        td ETD of POL Update
+                        td.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes', checked='')
+                      tr
+                        td.text-center 3
+                        td POL Update
+                        td.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes', checked='')
+      
+                .form-group 
+                  textarea(rows="4",style="width:100%;" value="Re-check the ship depature")
+                .col-md-6
+                  .form-group
+                        input.text-right.form-control(value="2017.06.12 10:22")
+                .col-md-6
+                  .form-group
+                        input.text-right.form-control(value="2017.06.12 17:22")
+        .col-md-12
+          .card
+            .card-content
+                h4.card-title 
+                  b Working List
+                .table-responsive
+                  table.table.table-striped
+                    thead
+                      tr
+                        th B/L
+                        th.text-center Date Time
+                        th.text-center %
+                        th.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes')
+                    tbody
+                      tr
+                        td OD10019
+                        td.text-center 2017.06.14 15:21
+                        td.text-center 39%
+                        td.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes', checked='')
+                      tr
+                        td OD10020
+                        td.text-center 2017.06.14 15:21
+                        td.text-center 39%
+                        td.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes', checked='')
+                      tr
+                        td OD10021
+                        td.text-center 2017.06.14 15:21
+                        td.text-center 39%
+                        td.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes', checked='')
+                      tr
+                        td OD10019
+                        td.text-center 2017.06.14 15:21
+                        td.text-center 39%
+                        td.text-center
+                          .checkbox
+                            label
+                              input(type='checkbox', name='optionsCheckboxes', checked='')
+    .col-md-2               
+block scripts

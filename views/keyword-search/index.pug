@@ -1,0 +1,58 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .row
+      .col-md-2
+      .col-md-8
+        .card
+          .card-header.clearfix
+            .row
+                .col-md-2
+                    button.btn.btn-just-icon.btn-info
+                        i.fa.fa-wechat
+                .col-md-8
+                    transition(name="slide-fade")
+                        .customer-input.form-group.is-empty(v-if="isShowCustomerInput")
+                            input.form-control(placeholder="Just say what you want...")
+                            span.material-input
+                .col-md-2.text-right
+                    button.btn.btn-just-icon.btn-info(@click="onCustomerClick()")
+                        i.fa.fa-user-circle
+          .card-content
+            .col-md-12
+                .table-responsive
+                    table.table
+                        tbody
+                        tr
+                            td 
+                                b HB/L No.
+                            td 
+                                b OD10024
+                        tr 
+                            td Shipper
+                            td ACGROUP WORLDWIDE KOREA.LTD
+                        tr
+                            td Consignee
+                            td TRINITY GLASS INTERNATIONAL, INC
+                        tr
+                            td POL 
+                            td BUSAN, KOREA
+                        tr
+                            td ETD 
+                            td 04-18-2017
+                        tr
+                            td Carrier
+                            td AMERICAN PRESIDENT LINES LTD
+                        tr
+                            td Vessel Name
+                            td HYUNDAI DISCOVERY
+            .col-md-12                
+                button.btn.btn-info.btn-block
+                    | More Details
+            .col-md-12
+                button.btn.btn-info.btn-block
+                    | Report 
+      .col-md-2 

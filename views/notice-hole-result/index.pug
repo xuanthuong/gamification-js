@@ -1,0 +1,63 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .col-md-7
+        .row
+            .card
+                .card-content
+                    .col-md-6
+                        h6.card-title 
+                        b 2017 CLT Champion League
+                    .col-md-6.text-right
+                        h6.card-title
+                        b 2017.08.14 ~ 2017.08.18
+                    .col-md-12
+                        .table-responsive
+                        table.table#rightTable
+                            thead
+                                tr
+                                    th.text-center Hole
+                                    th.text-center Par
+                                    th.text-center Distance
+                                    th.text-center Score
+                                    th.text-center Date
+                            tbody
+                                tr(v-for="data in holeList", :key="data.id", v-on:click="tableRightClick(data.HOLE_TP)")
+                                    td.text-center {{data.id}}
+                                    td.text-center {{data.HOLE_TP}}
+                                    td.text-center {{data.TTL_DIST_NO}}
+                                    td.text-center {{data.SCRE_NO}}
+                                    td.text-center {{data.HOLE_DT}}
+        .row
+            .card
+                .card-content
+                    .table-responsive
+                    table.table#leftTable
+                        thead
+                            tr
+                                th.text-center(style="display:none;") Par
+                                th.text-center Shot
+                                th.text-center Distance
+                                th.text-center Action
+                                th.text-center Location
+                        tbody
+                            tr(v-for="shot in shotTable", :key="shot.id", v-on:click="tableLeftClick(shot.holeType, shot.ACT_NM, shot.RSLT_NM)")
+                                td.text-center(style="display:none;") {{shot.holeType}}
+                                td.text-center {{shot.ORD_NO}}
+                                td.text-center {{shot.DIST_NO}}
+                                td.text-center {{shot.ACT_NM}}
+                                td.text-center {{shot.RSLT_NM}}
+        .row
+            .col-md-6        
+                .card
+                    .card-content
+                        .icon.icon-rose(id="imgLeft")
+    .col-md-5
+        .card
+            .card-content
+                .icon.icon-rose(id="imgRight")
+block scripts
+    script(src="/socket.io/socket.io.js")    

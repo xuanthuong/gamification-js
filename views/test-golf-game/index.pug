@@ -1,0 +1,95 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .row 
+      .col-md-12
+        .card
+          .card-content
+            .form-horizontal
+              .row
+                .col-md-10
+                  .col-md-4
+                    label.col-md-2.label-on-left User
+                    .col-md-8
+                      select.form-control.valid(name='user', aria-invalid='false',v-model= "user", @change="userChange")
+                        option(value='All')  All 
+                        option(value='ThuongTran')  Thuong Tran 
+                        option(value='VanNgo')  Van Ngo
+                        option(value='KhangDong')  Khang Dong
+                  .col-md-2
+                    label.col-md-2.label-on-left Type
+                    .col-md-8
+                      select.form-control.valid(name='type', aria-invalid='false', v-model = "type")
+                        option(value='All')  All 
+                        option(value='Single')  Single 
+                        option(value='Team')  Team
+                  .col-md-2
+                    .radio.radio-inline.label-on-left
+                      label Par 3
+                        input(type="radio", v-model="optionPar", name="optionPar", value = "Par3", checked)
+                  .col-md-2
+                    .radio.radio-inline.label-on-left
+                      label Par 4
+                        input(type="radio", v-model="optionPar", name="optionPar", value = "Par4")
+                  .col-md-2
+                    .radio.radio-inline.label-on-left
+                      label Par 5
+                        input(type="radio", v-model="optionPar", name="optionPar", value = "Par5")
+                .col-md-2.text-right
+                  button.btn.btn-info(@click="playgame") Start Game
+              .row
+                .col-md-12
+                  .col-md-1
+                    label.label-on-left Current Levels
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv1", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv2", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv3", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv4", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv5", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv6", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv7", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv8", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv9", disabled)
+                  .col-md-1
+                    input.form-control.text-center(type="text", v-model= "currentLv10", disabled)
+    .row
+      .col-md-9
+        .card
+          .card-content
+            .col-md-12
+              .table-responsive
+                table.table
+                  thead
+                    tr
+                      th Shot
+                      th Distance
+                      th Action
+                      th To Location
+                  tbody
+                    tr(v-for="shot in shots", :key="shot.id", v-on:click="tableClick(shot.action, shot.toLocation)")
+                      td {{shot.id}}
+                      td {{shot.distance}}
+                      td {{shot.action}}
+                      td {{shot.toLocation}}
+                    tr
+                      td(colspan=2)
+                      td.td-total Hole Score
+                      td.td-price {{holeScore}}
+
+      .col-md-3(id="imgdiv")
+        .card
+          .card-content
+            .icon.icon-rose(id="img")
+block scripts

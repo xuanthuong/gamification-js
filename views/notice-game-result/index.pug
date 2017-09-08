@@ -1,0 +1,92 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .col-md-12
+        .card
+            .card-content
+                .col-md-10
+                    .col-md-6
+                        h6.card-title 
+                        b 2017 CLT Champion League
+                    .col-md-6.text-right
+                        h6.card-title
+                        b 2017.08.14 ~ 2017.08.18
+                    .table-responsive
+                    table.table
+                        thead
+                            tr
+                                th.text-center Hole
+                                th.text-center 1
+                                th.text-center 2
+                                th.text-center 3
+                                th.text-center 4
+                                th.text-center 5
+                                th.text-center Total
+                        tbody
+                            tr
+                                td.text-center Par
+                                td.text-center 3
+                                td.text-center 4
+                                td.text-center 5
+                                td.text-center 3
+                                td.text-center 5
+                                td.text-center 20
+                .col-md-2.text-right
+                    button.btn.btn-info.btn-lg GAME START
+    .col-md-6
+        .card
+            .card-content
+                #colouredBarsChart.ct-chart
+                .card-footer
+                        i.fa.fa-circle.text-info
+                        |  Me
+    .col-md-6
+        .card
+            .card-content
+                #multipleBarsChart.ct-chart
+                .card-footer
+                        i.fa.fa-circle.text-info
+                        |  Me
+                        |
+                        i.fa.fa-circle.text-danger
+                        |  Member Avg.
+    .col-md-8
+        .card
+            .card-content
+                .col-md-12
+                    .table-responsive
+                    table.table
+                        thead
+                            tr
+                                th.text-center League
+                                th.text-center Date
+                                th.text-center Winner
+                                th.text-center Point
+                                th.text-center Players
+                        tbody
+                            tr
+                                td.text-center 2017 CLT Champion
+                                td.text-center 2017.08.14 ~ 2017.08.18
+                                td.text-center Wilson
+                                td.text-center 15
+                                td.text-center 54
+        
+    .col-md-4
+        .card
+            .card-content
+                .table-responsive
+                  table.table
+                    thead
+                        tr
+                            th.text-center Rank
+                            th.text-center Player
+                            th.text-center Point
+                    tbody
+                        tr
+                            td.text-center 1
+                            td.text-center Wilson
+                            td.text-center 15
+

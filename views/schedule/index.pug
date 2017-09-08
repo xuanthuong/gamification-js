@@ -1,0 +1,79 @@
+extends ../layout
+
+block styles
+
+block content
+  .container-fluid
+    .row
+      .col-md-6
+        .card.card-calendar
+          .card-content
+            full-calendar(:events="events", default-view='month', :header='header', eventLimit="true")
+      .col-md-6
+        .card.card-calendar
+          .card-content
+            full-calendar(:events="events", default-view='agendaWeek', :header='header', eventLimit="true")
+    .row
+        .col-md-6
+          .card
+            .card-content
+              .row
+                .form-group        
+                  .col-md-8                               
+                    input.form-control(value="BL OD100234 Create")
+                  .col-md-4
+                    button.btn Add
+              .row
+                .table-responsive
+                  table.table
+                    thead
+                      tr
+                        th.text-center #
+                        th Task Name
+                        th.text-center Par
+                        th Date Time
+                    tbody
+                      tr(v-for="task in tasks", :key="task.id")
+                        td.text-center {{task.id}}
+                        td {{task.name}}
+                        td.text-center {{task.par}}
+                        td {{task.dateTime}}
+        .col-md-6
+          .card
+            .card-content
+              .row
+                .col-md-10      
+                  .form-group                                 
+                    input.form-control(value="Booking Entry")
+                .col-md-2  
+                  .form-group 
+                    input.form-control(value="1")
+              .row
+                .col-md-3  
+                  .form-group                              
+                    input.form-control(value="2017.06.20")
+                .col-md-3
+                  .form-group
+                    input.form-control(value="AM10:00")
+                .col-md-3
+                  .form-group
+                    input.form-control(value="2017.06.20")
+                .col-md-3
+                  .form-group
+                    input.form-control(value="PM05:00")
+              .row
+                .form-group 
+                  textarea(rows="4",style="width:100%;") CONTAINER NO/SEAL NO ABCD1234567/
+              .row
+                .text-right
+                  button.btn.btn-sm(style="width:100px;") Add
+              .row
+                .text-right
+                  button.btn.btn-sm(style="width:100px;") Delete
+              .row
+                .text-right
+                  button.btn.btn-sm(style="width:100px;") Save
+block scripts
+  // Full Calendar Plugin
+  script(src='/vendor/fullcalendar/fullcalendar.min.js')
+  script(src='/assets/js/components/fullcalendar.js')
