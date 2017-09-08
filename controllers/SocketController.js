@@ -13,10 +13,10 @@ io.on('connection', (socket) => {
         io.emit('hole', msg);
     });
 });
-http.listen(80);
+http.listen(12355);
 
 const socketApi = (req, res, next) => {
-    let socket = ioclient.connect('https://gamification-pm.herokuapp.com', { reconnect: true });
+    let socket = ioclient.connect('https://gamification-pm.herokuapp.com:12355', { reconnect: true });
     socket.on('connect', function (socket) {
         console.log('Connected!');
     });
